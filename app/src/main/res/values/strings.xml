@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TBankFakeApp</string>
+
+<!--    BottomNavigation strings-->
+    <string name="bottom_main_text">Main</string>
+    <string name="bottom_payments_text">Payments</string>
+    <string name="bottom_city_text">City</string>
+    <string name="bottom_chat_text">Chat</string>
+    <string name="bottom_hub_text">Hub</string>
+</resources>

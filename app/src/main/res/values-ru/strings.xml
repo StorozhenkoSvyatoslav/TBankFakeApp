@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Тбанк</string>
+
+    <!--    BottomNavigation strings-->
+    <string name="bottom_main_text">Главная</string>
+    <string name="bottom_payments_text">Платежи</string>
+    <string name="bottom_city_text">Город</string>
+    <string name="bottom_chat_text">Чат</string>
+    <string name="bottom_hub_text">Витрина</string>
+</resources>
