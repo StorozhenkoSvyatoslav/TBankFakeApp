@@ -1,6 +1,7 @@
 package com.example.tbankfakeapp.ui.components.mainscreen
 
 import android.R
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -17,12 +18,17 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -36,19 +42,13 @@ import java.nio.file.WatchEvent
 @Composable
 fun CardPreview() {
     TBankAppTheme {
-
         PromoCard(
             paintId = com.example.tbankfakeapp.R.drawable.promo_card6,
             title = "Title",
             isSeen = false,
-            isOpen = { isOpen() },
             modifier = Modifier
         )
     }
-}
-
-fun isOpen() {
-
 }
 
 @Composable
@@ -56,9 +56,10 @@ fun PromoCard(
     paintId: Int,
     title: String,
     isSeen: Boolean,
-    isOpen: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    var isSeen by remember {mutableStateOf(isSeen)}
+
     val shape = RoundedCornerShape(18.dp)
 
     val cardSize = 94.dp
@@ -66,21 +67,27 @@ fun PromoCard(
     val gapToBlue = 1.6.dp
     val blueBorderWidth = 1.6.dp
 
+    val context = LocalContext.current
+
     Box(
         modifier = modifier
             .border(
-                width = if (!isSeen) blueBorderWidth else 0.dp,
-                color = AppColors.PrimaryBlue,
-                shape = shape
+                width = blueBorderWidth,
+                color = if (!isSeen) AppColors.PrimaryBlue else Color.Transparent,
+                shape = RoundedCornerShape(22.dp)
             )
-            .padding(if (!isSeen) gapToBlue else 0.dp)
-            .size(cardSize)
+            .padding(gapToBlue)
+            .size(100.dp)
     ) {
         OutlinedCard(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.size(cardSize).align(Alignment.Center),
+            colors = CardDefaults.cardColors(containerColor = Color.Transparent),
             shape = shape,
             border = BorderStroke(innerBorderWidth, Color.White.copy(alpha = 0.25f)),
-            onClick = isOpen
+            onClick = {
+                isSeen = true
+                Toast.makeText(context, "Открыли промо: ${title}", Toast.LENGTH_SHORT).show()
+            }
         ) {
             Box(Modifier.fillMaxSize()) {
                 Image(
@@ -118,45 +125,40 @@ fun PromoCardRow(
         item{
             PromoCard(
                 paintId = com.example.tbankfakeapp.R.drawable.promo_card6,
-                title = "Title",
+                title = "",
                 isSeen = false,
-                isOpen = { isOpen() },
                 modifier = modifier,
             )
         }
         item{
             PromoCard(
-                paintId = com.example.tbankfakeapp.R.drawable.promo_card6,
-                title = "Title",
+                paintId = com.example.tbankfakeapp.R.drawable.promo_card2,
+                title = "Спермааааааааа",
                 isSeen = false,
-                isOpen = { isOpen() },
                 modifier = modifier,
             )
         }
         item{
             PromoCard(
-                paintId = com.example.tbankfakeapp.R.drawable.promo_card6,
-                title = "Title",
+                paintId = com.example.tbankfakeapp.R.drawable.promo_card4,
+                title = "",
                 isSeen = false,
-                isOpen = { isOpen() },
                 modifier = modifier,
             )
         }
         item{
             PromoCard(
-                paintId = com.example.tbankfakeapp.R.drawable.promo_card6,
-                title = "Title",
+                paintId = com.example.tbankfakeapp.R.drawable.promo_card1,
+                title = "",
                 isSeen = false,
-                isOpen = { isOpen() },
                 modifier = modifier,
             )
         }
         item{
             PromoCard(
-                paintId = com.example.tbankfakeapp.R.drawable.promo_card6,
-                title = "Title",
+                paintId = com.example.tbankfakeapp.R.drawable.promo_card5,
+                title = "Целлюлит",
                 isSeen = false,
-                isOpen = { isOpen() },
                 modifier = modifier,
             )
         }

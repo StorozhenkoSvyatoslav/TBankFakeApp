@@ -14,7 +14,7 @@ object AppColors {
     val TextSecondary = Color(0xFF9398a1)
 
     // Акцентные цвета
-    val PrimaryBlue = Color(0xFF1764E3)
+    val PrimaryBlue = Color(0xFF286FE3)
     val AccentOrange = Color(0xFFFFB84D)
     val AccentYellow = Color(0xFFFFD966)
     val AccentRed = Color(0xFFf42220)

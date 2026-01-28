@@ -20,11 +20,13 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tbankfakeapp.R
 import com.example.tbankfakeapp.ui.theme.AppColors
 
+@Preview
 @Composable
 fun SearchField(
     modifier: Modifier = Modifier
@@ -36,7 +38,7 @@ fun SearchField(
         value = textState,
         onValueChange = { textState = it },
         singleLine = true,
-        textStyle = TextStyle(color = Color.White, fontSize = 10.sp),
+        textStyle = TextStyle(color = Color.White, fontSize = 16.sp),
         cursorBrush = SolidColor(Color.White),
         modifier = modifier
             .fillMaxWidth()

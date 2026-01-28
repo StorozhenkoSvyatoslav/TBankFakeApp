@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tbankfakeapp.R
 import com.example.tbankfakeapp.ui.components.SearchField
+import com.example.tbankfakeapp.ui.components.mainscreen.MainScreenProfile
 import com.example.tbankfakeapp.ui.components.mainscreen.PromoCard
 import com.example.tbankfakeapp.ui.components.mainscreen.PromoCardRow
 import com.example.tbankfakeapp.ui.components.rememberScreenPadding
@@ -70,7 +71,7 @@ fun MainScreen(innerPadding: PaddingValues) {
             top = innerPadding.calculateTopPadding(),
             bottom = innerPadding.calculateBottomPadding()
         ),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+        verticalArrangement = Arrangement.spacedBy(20.dp),
         modifier = Modifier
             .fillMaxSize()
             .background(AppColors.BackgroundDark)
@@ -79,6 +80,11 @@ fun MainScreen(innerPadding: PaddingValues) {
         item {
             Box(Modifier.padding(horizontal = 16.dp)) {
                 SearchField()
+            }
+        }
+        item {
+            Box(Modifier.padding(horizontal = 16.dp)) {
+                MainScreenProfile()
             }
         }
         item {
