@@ -4,19 +4,20 @@ import androidx.compose.ui.graphics.Color
 
 object AppColors {
     // Основные цвета (тёмная тема)
-    val BackgroundDark = Color(0xFF1F1F1F)
-    val SurfaceDark = Color(0xFF2D2D2D)
-    val CardBackground = Color(0xFF3A3A3A)
+    val BackgroundDark = Color(0xFF121212)
+    val SurfaceDark = Color(0xFF1c1c1e)
+    val CardBackground = Color(0xFF2a2a2a)
+    val SearchBackground = Color(0xFF363636)
 
     // Текст
-    val TextPrimary = Color(0xFFFFFFFF)
-    val TextSecondary = Color(0xFFB0B0B0)
+    val TextPrimary = Color(0xFFf6f7f9)
+    val TextSecondary = Color(0xFF9398a1)
 
     // Акцентные цвета
-    val PrimaryBlue = Color(0xFF5B7EFF)
+    val PrimaryBlue = Color(0xFF1764E3)
     val AccentOrange = Color(0xFFFFB84D)
     val AccentYellow = Color(0xFFFFD966)
-    val AccentRed = Color(0xFFFF6B6B)
+    val AccentRed = Color(0xFFf42220)
     val AccentGreen = Color(0xFF66DD88)
 
     // Специальные цвета
